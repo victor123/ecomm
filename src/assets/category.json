@@ -1,0 +1,31 @@
+[
+    { "id": 10, "name": "All Categories", "SubCategory":[
+        {"item":"menu1","url":"my producyt1"},
+        {"item":"menu2","url":"my producyt2"},
+        {"item":"menu3","url":"my producyt3"},
+        {"item":"menu4","url":"my producyt4"}
+
+        ] },
+    { "id": 20, "name": "Fashion",  "SubCategory":[
+        {"item":"menu11","url":"my producyt1"},
+        {"item":"menu12","url":"my producyt2"},
+        {"item":"menu13","url":"my producyt3"},
+        {"item":"menu14","url":"my producyt4"}
+
+        ] },
+    { "id": 30, "name": "Women",  "SubCategory":[
+        {"item":"menu21","url":"my producyt1"},
+        {"item":"menu22","url":"my producyt2"},
+        {"item":"menu23","url":"my producyt3"},
+        {"item":"menu24","url":"my producyt4"}
+
+        ] },
+    { "id": 31, "name": "Dresses & Skirts",  "SubCategory":[
+        {"item":"menu31","url":"my producyt1"},
+        {"item":"menu32","url":"my producyt2"},
+        {"item":"menu33","url":"my producyt3"},
+        {"item":"menu34","url":"my producyt4"}
+
+        ]}
+    
+]

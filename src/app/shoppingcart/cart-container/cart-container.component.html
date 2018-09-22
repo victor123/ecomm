@@ -1,0 +1,30 @@
+  <!-- <div [ngClass]="{'active':cardItemContainer == true}"  class="cartlist"> -->
+    <div  [ngClass]="{'active':sliderClass == true}" class="cartlist">
+    <a (click)="goBack($event)">Back</a>
+    <div *ngFor="let pro of addCartItem">
+      <button (click)="deleteCart(pro)"> delete </button>
+      <div class="row">
+      <div class="col-md-12 border-bot">
+        <div class="col-md-3">
+          <div class="thumnail">
+            <img style="width:100%" [src]="pro.src" />
+          </div>
+        </div>
+        <div class="col-md-3">
+
+          <div> {{pro.name}} </div>
+        </div>
+        <div class="col-md-3">
+
+          <div>  <span  (click)="productMinus(pro)"> - </span>  {{pro.quantity}} <span (click)="productPlus(pro)"> + </span> </div>
+        </div>
+        <div class="col-md-3">
+
+            <div> {{pro.price | currency:'INR':'symbol-narrow'}} </div>
+          </div>
+      </div>
+    </div>
+  
+  </div>
+  <div> {{total | currency:'INR':'symbol-narrow'}}</div>
+</div>

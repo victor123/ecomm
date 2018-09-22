@@ -1,0 +1,21 @@
+
+   <div class="overlay" *ngIf="loaderComponent"> 
+    <loader-component></loader-component>
+    </div> 
+<div *ngIf="productDetail | key">
+  <img [src]="productDetail.images[0].medium" />
+  <div *ngIf="productDetail.discount" >{{productDetail.discount}}% </div>
+  <div>
+    <p>{{productDetail.description}} </p>
+    <p *ngIf="productDetail.oldPrice" class="oldPrice">{{productDetail?.oldPrice | currency}} </p>
+    <p>{{productDetail.newPrice | currency}} </p>
+    <p> Availibility : {{productDetail.availibilityCount == 0 ? 'Not stock': 'In stock'}}</p>
+  </div>
+  <div>
+    <div *ngFor="let pro of productDetail.color" 
+    class="bx" 
+    [ngStyle]="{'background-color':pro}"> </div>
+  </div>
+  <div *ngFor="let pro of productDetail.size" 
+  class="bx"> {{pro}} </div>
+</div>

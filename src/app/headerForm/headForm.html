@@ -1,0 +1,22 @@
+<header class="header-section">
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="headerList">
+          <div class="input-group input-group-lg mar-bt">
+            <span class="input-group-addon" id="sizing-addon1">
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+            </span>
+            <input type="text" name="date" [value]="location" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+          </div>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+            </span>
+            <input type="text" class="form-control" value="Today, {{todayDate | date:'dd/MM/yyyy'}}" placeholder="Username" aria-describedby="sizing-addon1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,12 @@
+<div class=""> 
+<select (change)="menuList($event)" > 
+<option *ngFor="let pro of list"  [value]="pro.id"> {{pro.name}} </option>
+</select> <input type="text">   </div>
+<div class="autocomplete">
+ <ul class="list-group">
+    <li class="list-group-item "   *ngFor="let items of subItem | key" >
+        <span>{{items.item}} </span> 
+
+     </li> 
+ </ul>
+</div>

@@ -1,0 +1,61 @@
+<div class="row">
+
+  <div class="col-md-3">
+    <product-filter 
+    (filterprice)="filterPrice($event)"
+    (clearRange)= "clearRange($event)"
+    [category]="category">
+    
+  </product-filter>
+   
+
+  </div>
+  <div class="col-md-9">
+    <!-- <products-sort></products-sort> -->
+    <div> <select (change)="sortproduct($event)">
+        <option *ngFor="let sort of sorter" [value]="sort"> {{sort}} </option>
+      </select>
+      <button (click)="clicked = 'col-md-12 temp'"> grid </button>
+      <button (click)="clicked = 'col-md-4'"> grid </button>
+      <button (click)="clicked = 'col-md-3'"> grid </button>
+    </div>
+
+
+
+
+    <div class="overlay" *ngIf="loaderComponent">
+      <loader-component></loader-component>
+    </div>
+    <ng-container *ngFor="let product of (filterProduct | priceFilter:minPrice:maxPrice); let i = index ">
+
+      <!-- <product-card [product] = "product" > </product-card> -->
+      <div class="col-sm-4 height-3" [ngClass]="clicked">
+        <div style="float:right">
+          <span class="rgreen" [ngClass]="{'yellow':starsCount[i] <= 4 }"> {{starsCount[i]}} </span> <span>
+            {{product.ratingsCount}} Ratings </span>
+        </div>
+        <!-- <rating
+    [readonly]="true"
+      [(ngModel)]="starsCount[i]" 
+      [float]="true"></rating> -->
+
+        <a class="clk" (click)="detailPage(product)">
+
+          <div *ngIf="product.availibilityCount === 0" class="no-stock"> nostock</div>
+          <div class="thumbnail">
+            <img [src]="product.images[0].medium">
+          </div>
+        </a>
+        <div class="caption">
+          <h3>{{product.name}}</h3>
+          <div class="discount pull-right" *ngIf="product.discount">Discount : {{product.discount}}%</div>
+          <p> Price : {{product.newPrice | currency }}</p>
+
+        </div>
+        <p><a *ngIf="product.availibilityCount != 0" class="btn btn-primary" role="button" (click)="addCartProduct(product)">Add
+            cart</a> </p>
+      </div>
+      <!-- <div class="w-100" *ngIf="(i+1) % 4 === 0"> </div> -->
+    </ng-container>
+  </div>
+</div>

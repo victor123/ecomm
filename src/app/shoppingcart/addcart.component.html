@@ -1,0 +1,14 @@
+<div class="right-cart">
+  <div class="count" (click)="showCartList()"> cart
+    <span class="badge">{{countItem}}</span>
+  </div>
+
+
+  <div  *ngIf="cardItemContainer" >
+   <div class="overlay" ></div>
+  <app-cart-container 
+  [sliderClass] = "sliderClass"
+  (containerToggle)="toggle()">
+   </app-cart-container>
+</div>
+</div>

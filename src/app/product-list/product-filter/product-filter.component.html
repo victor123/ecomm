@@ -1,0 +1,22 @@
+<div class="list-group">
+  <a class="list-group-item" routerLink="/product" [class.active]="!category">
+    All category
+  </a>
+  <a class="list-group-item" routerLink="/product" [queryParams]="{category: product.name}" *ngFor="let product of FilterproductData"
+    [class.active]="category === product.name">
+    {{product.name}}
+  </a>
+</div>
+
+<!-- Notification -->
+<div class="note">
+  <span>PRICE : from <strong>${{ minPrice }}</strong></span>
+  <span> to <strong>${{ maxPrice }}</strong>.</span>
+</div>
+
+<div class="rangeInput">
+  <input [(ngModel)]="minPrice" type="range" name="minPrice" min="10" max="5000" step="10">
+  <input name="maxPrice" [(ngModel)]="maxPrice" type="range" min="10" max="5000" step="10">
+</div>
+<button (click)="submitPrice()"> submit </button>
+<button (click)="clearAll()"> clear </button>
